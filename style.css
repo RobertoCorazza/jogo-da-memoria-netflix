@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background-color: rgb(29, 28, 28);
+}
+
+.style-text {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #b20710;
+    font-size: 50px;
+    position: relative;
+    top: 0px;
+    left: 70px;
+    padding-bottom: 10px;
+}
+
+.memory-game {
+    height: 640px;
+    width: 640px;
+    margin: auto;
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.card {
+    height: calc(33.333% - 10px);
+    width: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgb(1, 1, 0.3);
+    cursor: pointer;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    /*não deixa o elemento achatado no plano*/
+    transition: transform 0.9s;
+}
+
+.card:active {
+    transform: scale(0.97);
+    transition: transform .3s;
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: black;
+    backface-visibility: hidden;
+    /* propriedade que 'esconde' o verso do elemento*/
+}
+
+.card-front {
+    transform: rotateY(180deg);
+}
+
+/*FLIP CARD ANIMATION*/
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+button {
+    border-radius: 5px;
+    font-size: 1.5rem;
+    height: 60px;
+    width: 300px;
+    border: none;
+    background-color: #e50914;
+    color: #ffffff;
+    transition: all 0.5s linear;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 150px;
+    cursor: pointer;
+    position: absolute;
+    top: 670px;
+    left: 22px;
+    display: flex;
+
+}
+
+button:hover {
+    background-color: #b20710;
+}
